@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         /* ćw 1 enum-y */
 
@@ -18,7 +20,70 @@ public class Main {
         */
 
         /* statusy i wybór ze switch case to najczęstsze użycia enumów, enumy są często używane
-        * w różnego rodzaju listach, selectach jako krótkie opcje wyboru np. jako status A, X (Aktualny, Usunięty) */
+         * w różnego rodzaju listach, selectach jako krótkie opcje wyboru np. jako status A, X (Aktualny, Usunięty) */
 
+
+        System.out.println("Podaj liczbę od 0 do 6, 0 = wyjście z programu.");
+        Scanner sc = new Scanner(System.in);
+
+        while (true)
+        {
+            int liczba = sc.nextInt();
+
+            switch (liczba)
+            {
+                case 0 -> System.out.println(StatusEnum.KONIEC);
+                case 1 -> {
+                    System.out.println(LiczbyEnum.JEDEN);
+                    System.out.println(StatusEnum.KONTYNUUJEMY);
+                    continue;
+                }
+                case 2 -> {
+                    System.out.println(LiczbyEnum.DWA);
+                    System.out.println(StatusEnum.KONTYNUUJEMY);
+                    continue;
+                }
+                case 3 -> {
+                    System.out.println(LiczbyEnum.TRZY);
+                    System.out.println(StatusEnum.KONTYNUUJEMY);
+                    continue;
+                }
+                case 4 -> {
+                    System.out.println(LiczbyEnum.CZTERY);
+                    System.out.println(StatusEnum.KONTYNUUJEMY);
+                    continue;
+                }
+                case 5 -> {
+                    System.out.println(LiczbyEnum.PIEC);
+                    System.out.println(StatusEnum.KONTYNUUJEMY);
+                    continue;
+                }
+                case 6 -> {
+                    System.out.println(LiczbyEnum.SZESC);
+                    System.out.println(StatusEnum.KONTYNUUJEMY);
+                    continue;
+                }
+                default -> System.out.println("Niepoprawna wartosc.");
+            }
+           sc.close();
+
+        }
     }
+
+    enum LiczbyEnum
+    {
+        JEDEN,
+        DWA,
+        TRZY,
+        CZTERY,
+        PIEC,
+        SZESC;
+    }
+
+    enum StatusEnum
+    {
+        KONTYNUUJEMY,
+        KONIEC;
+    }
+
 }
