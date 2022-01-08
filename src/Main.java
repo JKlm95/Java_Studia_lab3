@@ -19,5 +19,32 @@ public class Main {
             e) wywołać metody suma i róznica (obie wersje) z klasy punkt
         */
 
+        Punkt punktA = new Punkt(7);
+        punktA.toString();
+
+        Punkt punktB = new Punkt(5, 6, 7);
+        punktB.toString();
+
+
+
+        punktB.setpX(7);
+        punktB.setpY(2);
+        punktB.setpZ(5);
+
+        punktB.toString();
+
+        System.out.println(punktB.getpX() + " " + punktB.getpY() + " " + punktB.getpZ()); // pZ wyświetla 50, ponieważ getpZ zwraca pZ * 10
+
+        int result = punktB.Suma();
+        System.out.println(result);
+
+        int result1 = punktB.Roznica1();
+        System.out.println(result1);
+
+        int result2 = punktB.Roznica2(3, 2, 1);
+        System.out.println(result2);
+
+
     }
+
 }
